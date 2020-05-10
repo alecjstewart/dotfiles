@@ -1,0 +1,6 @@
+[user]
+	name = Alec Stewart
+	email = alec@alecjstewart.com
+	signingkey = 16A4BF6B234FA6CC
+[commit]
+	gpgsign = true
