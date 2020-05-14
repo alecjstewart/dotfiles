@@ -7,10 +7,16 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
+
 setopt autocd beep nomatch prompt_subst correct inc_append_history interactivecomments share_history
 unsetopt notify
 bindkey -v
 zstyle :compinstall filename '$HOME/.zshrc'
+
+# Autocomplete from the middle of a filename
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+
 autoload -Uz compinit && compinit
 autoload -U colors && colors
 

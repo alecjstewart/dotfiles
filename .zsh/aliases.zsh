@@ -14,12 +14,27 @@ alias gp='git push'
 alias gs='git status'
 alias gaa='git add .'
 
-alias pubip='curl icanhazip.com'
-alias localip='ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([0-9]*\.){3}[0-9]*" | grep -v "127.0.0.1"'
-
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cs='config status'
 
+alias pubip='curl icanhazip.com'
+alias localip='ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([0-9]*\.){3}[0-9]*" | grep -v "127.0.0.1"'
+
 brain() {
 	cd ~/Documents/brain
+}
+
+note() {
+	date=$(date +'%Y%m%d%H%M')
+	args=$@
+	dashargs=${args// /-}
+	filename=$date-$dashargs.md
+
+	echo "# $date $args" >> $filename
+	echo "" >> $filename
+	echo "" >> $filename
+	echo "" >> $filename
+	echo "## links" >> $filename
+	
+	nvim $filename
 }

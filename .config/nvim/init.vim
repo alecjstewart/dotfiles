@@ -11,7 +11,8 @@ inoremap ;; <ESC>
 
 " Basic Settings
 set hidden
-set nowrap
+set wrap
+set linebreak
 set tabstop=4
 set backspace=indent,eol,start
 set autoindent
@@ -42,6 +43,9 @@ set laststatus=2
 nnoremap j gj
 nnoremap k gk
 nmap <silent> <leader><enter> :nohlsearch<CR>
+
+nmap <F3> i<C-R>=strftime("%Y%m%d%H%M")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y%m%d%H%M")<CR>
 
 " Remember last position
 au BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal! g'\"" | endif
