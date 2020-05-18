@@ -1,5 +1,7 @@
 # dotfiles
 
+Dotfiles for all my machines.
+
 ## Setup (taken and adapted from [Hacker News](https://news.ycombinator.com/item?id=11070797))
 
 1. Initialize a bare git repository
@@ -14,7 +16,7 @@
 	alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 	```
 
-Note: this can be added to something like `~/.bashrc` or `~/.zshrc`
+	Note: this can be added to something like `~/.bashrc` or `~/.zshrc`
 
 3. Remove untracked files from being shown when running `config status`
 
