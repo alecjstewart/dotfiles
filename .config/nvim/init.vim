@@ -47,6 +47,9 @@ nmap <silent> <leader><enter> :nohlsearch<CR>
 nmap <F3> i<C-R>=strftime("%Y%m%d%H%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y%m%d%H%M")<CR>
 
+nmap <F4> i<C-R>=strftime("%d-%b-%Y")<CR><Esc>
+imap <F4> <C-R>=strftime("%d-%b-%Y")<CR>
+
 " Remember last position
 au BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal! g'\"" | endif
 
