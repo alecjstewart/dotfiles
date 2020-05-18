@@ -21,7 +21,7 @@ autoload -Uz compinit && compinit
 autoload -U colors && colors
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 
 precmd() {
