@@ -253,7 +253,7 @@
 	<key>WindowTitle</key>
 	<string></string>
 	<key>columnCount</key>
-	<integer>159</integer>
+	<integer>156</integer>
 	<key>name</key>
 	<string>Gruvbox</string>
 	<key>rowCount</key>
