@@ -20,10 +20,6 @@ alias cs='config status'
 alias pubip='curl icanhazip.com'
 alias localip='ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([0-9]*\.){3}[0-9]*" | grep -v "127.0.0.1"'
 
-brain() {
-	cd ~/Documents/brain
-}
-
 note() {
 	date=$(date +'%Y%m%d%H%M')
 	args=$@
