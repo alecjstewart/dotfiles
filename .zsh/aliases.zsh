@@ -10,7 +10,8 @@ alias mem='top -o rsize' # memory
 alias please='sudo $(fc -ln -1)' # or sudo $(history -p !!) for bash
 
 alias gcm='git commit -m'
-alias gp='git push'
+alias gpu='git push'
+alias gpl='git pull'
 alias gs='git status'
 alias gaa='git add .'
 
