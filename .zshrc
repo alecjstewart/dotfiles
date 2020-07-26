@@ -21,8 +21,14 @@ autoload -Uz compinit && compinit
 autoload -U colors && colors
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export PATH="/usr/local/sbin:$PATH"
+export GOPATH=$HOME/Documents/programming/go
+export GOBIN=$HOME/Documents/programming/go/bin
+export GOROOT=/usr/local/opt/go/libexec
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export GPG_TTY=$(tty)
+
 
 precmd() {
 	echo -ne "\e]1;$USER@$(hostname): $(dirs)\a"
@@ -109,6 +115,6 @@ git_info() {
 # Use $ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
 PS1='
-%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}%m%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%} $(git_info)
+%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}$(hostname -f)%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%} $(git_info)
 %(?.%{$fg[cyan]%}.%{$fg[red]%})%(!.#.$)%{$reset_color%} '
 
