@@ -1,7 +1,7 @@
 function Dotfile-Config {
     git --git-dir=$HOME\.cfg\ --work-tree=$HOME $args
 }
-Set-Alias -Name config -Value Dotfile-Config
+Set-Alias -Name dotfiles -Value Dotfile-Config
 
 function prompt {
     Write-Host ""
