@@ -24,7 +24,7 @@ Dotfiles for all my machines. Includes a `windows` branch for Windows dotfiles, 
 	dotfiles config status.showUntrackedFiles no
 	```
 
-## Usage[^1]
+## Usage[1]
 
 The `~/.cfg` directory is a git bare repository, so any file within the home folder can be versioned with normal commands like:
 
@@ -39,7 +39,7 @@ dotfiles push
 
 With this, there is no extra tooling, no symlinks, files are tracked on a version control system, you can use different branches for different computers, and you can replicate you configuration easily on new installation.
 
-## Cloning[^2]
+## Cloning[2]
 
 If you want to clone this repository for use on a new a machine...
 
@@ -110,5 +110,5 @@ If you want to clone this repository for use on a new a machine...
 
 ## Resources
 
-[^1]: Taken and adpated from [Hacker News](https://news.ycombinator.com/item?id=11070797)
-[^2]: Taken and adapted from [Atlassian](https://www.atlassian.com/git/tutorials/dotfiles)
+1. Taken and adpated from [Hacker News](https://news.ycombinator.com/item?id=11070797)
+2. Taken and adapted from [Atlassian](https://www.atlassian.com/git/tutorials/dotfiles)
