@@ -17,7 +17,7 @@ alias gs='git status'
 alias gaa='git add .'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ds='config status'
+alias ds='dotfiles status'
 
 alias pubip='curl icanhazip.com'
 alias localip='ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([0-9]*\.){3}[0-9]*" | grep -v "127.0.0.1"'
