@@ -1,0 +1,36 @@
+{
+    "telemetry.enableTelemetry": false,
+    "git.enableCommitSigning": true,
+    "workbench.colorCustomizations": {
+        "terminal.background":"#282828",
+        "terminal.foreground":"#EBDBB2",
+        "terminalCursor.background":"#EBDBB2",
+        "terminalCursor.foreground":"#EBDBB2",
+        "terminal.ansiBlack":"#282828",
+        "terminal.ansiBlue":"#458588",
+        "terminal.ansiBrightBlack":"#928374",
+        "terminal.ansiBrightBlue":"#83A598",
+        "terminal.ansiBrightCyan":"#8EC07C",
+        "terminal.ansiBrightGreen":"#B8BB26",
+        "terminal.ansiBrightMagenta":"#D3869B",
+        "terminal.ansiBrightRed":"#FB4934",
+        "terminal.ansiBrightWhite":"#EBDBB2",
+        "terminal.ansiBrightYellow":"#FABD2F",
+        "terminal.ansiCyan":"#689D6A",
+        "terminal.ansiGreen":"#98971A",
+        "terminal.ansiMagenta":"#B16286",
+        "terminal.ansiRed":"#CC241D",
+        "terminal.ansiWhite":"#A89984",
+        "terminal.ansiYellow":"#D79921"
+    },
+    "workbench.colorTheme": "Gruvbox Dark Soft",
+    "vim.enableNeovim": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "workbench.editorAssociations": [],
+    "workbench.startupEditor": "newUntitledFile",
+    "telemetry.enableCrashReporter": false,
+    "editor.detectIndentation": false,
+    "files.watcherExclude": {
+        "**/venvs/**": true
+    }
+}
