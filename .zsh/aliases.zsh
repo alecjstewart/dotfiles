@@ -1,4 +1,4 @@
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias ll='ls -la'
 alias l.='ls -Gd .*'
 
@@ -8,30 +8,16 @@ alias grep='grep --color'
 alias lsd='ls -lah | grep "^d"'
 alias mem='top -o rsize' # memory
 alias please='sudo $(fc -ln -1)' # or sudo $(history -p !!) for bash
+alias deploy='netlify deploy --dir=_site --prod'
 
 alias gcm='git commit -m'
-alias gpu='git push'
+alias gpu='git push && netlify deploy --dir=_site --prod'
 alias gpl='git pull'
 alias gs='git status'
 alias gaa='git add .'
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias cs='config status'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ds='config status'
 
 alias pubip='curl icanhazip.com'
 alias localip='ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([0-9]*\.){3}[0-9]*" | grep -v "127.0.0.1"'
-
-note() {
-	date=$(date +'%Y%m%d%H%M')
-	args=$@
-	dashargs=${args// /-}
-	filename=$date-$dashargs.md
-
-	echo "# $date $args" >> $filename
-	echo "" >> $filename
-	echo "" >> $filename
-	echo "" >> $filename
-	echo "## links" >> $filename
-	
-	nvim $filename
-}

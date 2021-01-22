@@ -17,18 +17,21 @@ zstyle :compinstall filename '$HOME/.zshrc'
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
+# Colors
 autoload -Uz compinit && compinit
 autoload -U colors && colors
+eval $(dircolors ~/.dircolors)
 
-export LSCOLORS=ExFxCxDxBxegedabagacad
-export GOPATH=$HOME/Documents/programming/go
-export GOBIN=$HOME/Documents/programming/go/bin
-export GOROOT=/usr/local/opt/go/libexec
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# PATH
+#export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+#export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH=~/.npm-global/bin:$PATH
 export GPG_TTY=$(tty)
 
+# Misc
+/usr/bin/keychain $HOME/.ssh/github
+source $HOME/.keychain/$HOST-sh
+source $HOME/.env
 
 precmd() {
 	echo -ne "\e]1;$USER@$(hostname): $(dirs)\a"
@@ -44,9 +47,9 @@ source ~/.zsh/aliases.zsh
 # ZSH PLUGINS
 ###
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Bind up and down keys for zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
@@ -63,7 +66,7 @@ virtualenv_info() {
     if test -z "$VIRTUAL_ENV" ; then
         echo ""
     else
-        echo "via %{$fg_bold[green]%}`basename $VIRTUAL_ENV`%{$reset_color%}"
+        echo " via %{$fg_bold[green]%}`basename $VIRTUAL_ENV`%{$reset_color%}"
     fi
 }
 
@@ -114,16 +117,15 @@ git_info() {
     fi
 
     local -a GIT_INFO
-    GIT_INFO+=( "on %{$fg_bold[magenta]%}$GIT_LOCATION%{$reset_color%}" )
+    GIT_INFO+=( " on %{$fg_bold[magenta]%}$GIT_LOCATION%{$reset_color%}" )
     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-    echo "${(j: :)GIT_INFO} "
+    echo "${(j: :)GIT_INFO}"
 
 }
 
 # Use $ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
 PS1='
-%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}$(hostname -f)%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%} $(git_info)$(virtualenv_info)
+%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}$(hostname -f)%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%}$(git_info)$(virtualenv_info)
 %(?.%{$fg[cyan]%}.%{$fg[red]%})%(!.#.$)%{$reset_color%} '
-

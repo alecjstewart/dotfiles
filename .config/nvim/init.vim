@@ -13,13 +13,13 @@ inoremap ;; <ESC>
 set hidden
 set wrap
 set linebreak
-set tabstop=2
+set tabstop=4
 set backspace=indent,eol,start
 set autoindent
 set copyindent
 set number
 set relativenumber
-set shiftwidth=2
+set shiftwidth=4
 set shiftround
 set showmatch
 set ignorecase
