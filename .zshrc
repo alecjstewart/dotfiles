@@ -31,7 +31,7 @@ export GPG_TTY=$(tty)
 
 
 precmd() {
-	echo -ne "\e]1;$USER@$(hostname): $(dirs)\a"
+    echo -ne "\e]1;$USER@$(hostname): $(dirs)\a"
 }
 
 ###
@@ -63,7 +63,7 @@ virtualenv_info() {
     if test -z "$VIRTUAL_ENV" ; then
         echo ""
     else
-        echo "via %{$fg_bold[green]%}`basename $VIRTUAL_ENV`%{$reset_color%}"
+        echo " via %{$fg_bold[green]%}`basename $VIRTUAL_ENV`%{$reset_color%}"
     fi
 }
 
@@ -114,7 +114,7 @@ git_info() {
     fi
 
     local -a GIT_INFO
-    GIT_INFO+=( "on %{$fg_bold[magenta]%}$GIT_LOCATION%{$reset_color%}" )
+    GIT_INFO+=( " on %{$fg_bold[magenta]%}$GIT_LOCATION%{$reset_color%}" )
     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
     echo "${(j: :)GIT_INFO} "
@@ -124,6 +124,6 @@ git_info() {
 # Use $ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
 PS1='
-%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}$(hostname -f)%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%} $(git_info)$(virtualenv_info)
+%{$fg_bold[yellow]%}%n%{$reset_color%} at %{$fg_bold[yellow]%}$(hostname -f)%{$reset_color%} in %{$fg_bold[blue]%}%~%{$reset_color%}$(git_info)$(virtualenv_info)
 %(?.%{$fg[cyan]%}.%{$fg[red]%})%(!.#.$)%{$reset_color%} '
 
