@@ -28,7 +28,8 @@
         "defaults":
         {
             // Put settings here that you want to apply to all profiles.
-            "colorScheme": "Gruvbox Dark"
+            "colorScheme": "Gruvbox Dark",
+            "historySize": 100000
         },
         "list":
         [
@@ -51,6 +52,12 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid":  "{6719f921-10f1-473d-a03f-116bb855f5f5}",
+                "hidden":  false,
+                "name":  "Raspberry Pi",
+                "commandline":  "ssh pi"
             }
         ]
     },

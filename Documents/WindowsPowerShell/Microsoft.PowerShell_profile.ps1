@@ -1,5 +1,5 @@
 function Dotfile-Config {
-    git --git-dir=$HOME\.cfg\ --work-tree=$HOME $args
+    git --git-dir=$HOME\.dotfiles\ --work-tree=$HOME $args
 }
 Set-Alias -Name dotfiles -Value Dotfile-Config
 

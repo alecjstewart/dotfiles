@@ -7,13 +7,13 @@ Dotfiles for all my machines. Includes a `windows` branch for Windows dotfiles, 
 1. Initialize a bare git repository
 	
 	```
-	git init --bare $HOME/.cfg
+	git init --bare $HOME/.dotfiles
 	```
 
 2. Setup alias to differentiate between `git` command
 
 	```
-	alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+	alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 	```
 
 	Note: this can be added to something like `~/.bashrc` or `~/.zshrc`
@@ -26,7 +26,7 @@ Dotfiles for all my machines. Includes a `windows` branch for Windows dotfiles, 
 
 ## Usage[1]
 
-The `~/.cfg` directory is a git bare repository, so any file within the home folder can be versioned with normal commands like:
+The `~/.dotfiles` directory is a git bare repository, so any file within the home folder can be versioned with normal commands like:
 
 ```
 dotfiles status
@@ -47,33 +47,33 @@ If you want to clone this repository for use on a new a machine...
 
 	macOS/Linux:
 	```
-	alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+	alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
 	```
 
 	Windows (add this to your Powershell profile):
 	```
 	function Dotfile-Config {
-		git --git-dir=$HOME\.cfg\ --work-tree=$HOME $args
+		git --git-dir=$HOME\.dotfiles\ --work-tree=$HOME $args
 	}
 	Set-Alias -Name dotfiles -Value Dotfile-Config
 	```
 
-2. To avoid recursion problems, add your source `.cfg` folder to your `.gitignore`
+2. To avoid recursion problems, add your source `.dotfiles` folder to your `.gitignore`
 
 	```
-	echo ".cfg" >> .gitignore
+	echo ".dotfiles" >> .gitignore
 	```
 
 3. Clone your dotfiles into a bare repository in a "dot" folder of your `$HOME`
 
 	```
-	git clone --bare <git-repo-url> $HOME/.cfg
+	git clone --bare <git-repo-url> $HOME/.dotfiles
 	```
 
 	or if you want to clone from a specific branch
 
 	```
-	git clone --bare -b <branch-name> <git-repo-url> $HOME/.cfg
+	git clone --bare -b <branch-name> <git-repo-url> $HOME/.dotfiles
 	```
 
 4. Checkout the content from the bare repository to your `$HOME`
@@ -110,5 +110,5 @@ If you want to clone this repository for use on a new a machine...
 
 ## Resources
 
-1. Taken and adpated from [Hacker News](https://news.ycombinator.com/item?id=11070797)
-2. Taken and adapted from [Atlassian](https://www.atlassian.com/git/tutorials/dotfiles)
+1. Taken and adpated from [Hacker News](https://news.ycombinator.com/item?id=11070797).
+2. Taken and adapted from [Atlassian](https://www.atlassian.com/git/tutorials/dotfiles).
